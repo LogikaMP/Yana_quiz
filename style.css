@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: "Poppins", cursive;
+    font-weight: 300;
+    font-style: italic;
+    color: #2b2b2b;
+
+    /* Переливчастий фон */
+    background: linear-gradient(135deg, #fdf4e3, #8369b6, #7ac3c0, #b04ba5);
+    background-size: 400% 400%;
+    animation: gradientFlow 12s ease infinite;
+}
+
+/* Анімація плавного переливу */
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* === КНОПКА СТАРТУ === */
+.btn-start {
+    display: block;
+    width: 40%;
+    margin: 150px auto;
+    padding: 20px 40px;
+    font-size: 2em;
+    border: 3px solid #8369b6;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #2b2b2b;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-start:hover {
+    transform: scale(1.1);
+    background-color: #8369b6;
+    color: #fff;
+    box-shadow: 0 0 25px #b04ba5;
+}
+
+/* === СТОРІНКА ТЕСТУ === */
+.card-qw {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.qw {
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    color: #2b2b2b;
+    margin-bottom: 30px;
+  ;
+
+}
+
+.answers { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* === КНОПКИ ВІДПОВІДЕЙ === */
+.ans {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  padding: 20px 35px;
+  margin: 15px 0;
+  border-radius: 20px;
+
+  /* Градієнт із RAL кольорів */
+  background: linear-gradient(135deg, #8369b6, #b04ba5);
+  color: #fff;
+
+  border: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  font-size: 1.3em;
+  font-weight: 300;
+  font-style: italic;
+  cursor: pointer;
+
+  /* Плавна анімація */
+  transition: all 0.4s ease, transform 0.3s ease;
+}
+
+/* Ефект при наведенні */
+.ans:hover {
+  transform: scale(1.1) rotate(-1deg);
+  background: linear-gradient(135deg, #7ac3c0, #fdf4e3);
+  color: #2b2b2b;
+  box-shadow: 0 0 25px #b04ba5;
+}
+
+/* Ефект при натисканні */
+.ans:active {
+  transform: scale(0.97);
+  box-shadow: inset 0 3px 8px rgba(0,0,0,0.3);
+}
+
+
+/* === ЗОБРАЖЕННЯ === */
+.img {
+    position: absolute;
+    top: 200px;
+    left: -350px;
+    z-index: 1;
+    width: 40%;
+    height: auto;
+    opacity: 1;
+}
+.koleso{
+  position: absolute;
+  top:0px;
+  left: 0px;
+  z-index: -1;
+  
+}
+.vuhlop{
+  position: absolute;
+  top:-200px;
+  left: -250px;
+}
+
+.img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* === РЕЗУЛЬТАТ === */
+.result {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 2em;
+    color: #2b2b2b;
+}
+
+.score {
+    font-weight: bold;
+    color: #b04ba5;
+}
+
+.total {
+    color: #7ac3c0;
+}
+
+/* Контейнер для фото */
+.foto {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Базові стилі для зображень */
+.foto img {
+  position: absolute;
+  bottom: 400px;
+  width: 200px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  animation: fadeInGlow 3s ease forwards;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Перше фото — лівий нижній кут */
+.foto img:first-child {
+  left: 30px;
+  animation-delay: 0.5s;
+}
+
+/* Друге фото — правий нижній кут */
+.foto img:last-child {
+  right: 30px;
+  animation-delay: 1s;
+}
+
+/* Ефект при наведенні */
+.foto img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #8369b6, 0 0 50px #b04ba5;
+}
+
+/* Анімація появи з переливом */
+@keyframes fadeInGlow {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    opacity: 0.6;
+    filter: hue-rotate(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: hue-rotate(360deg);
+  }
+}
