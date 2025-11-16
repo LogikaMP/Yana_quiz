@@ -61,3 +61,16 @@ window.onload = function(){
             // анімація кількості правильних відповідей по завершенню анімації total
 
 }
+let restart = document.querySelector(".restart")
+restart.addEventListener("click", function(){
+        anime({
+        targets: restart,
+        scale: [2,1,2,1,2,1],
+        color:["#D12300", "#FFBB29"],
+        rotate: 360,
+        duration:5000,
+        
+    }).finished.then(function(){
+        window.location.replace("test.html")
+    })
+})
